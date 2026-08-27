@@ -1,0 +1,53 @@
+FMCW / TDM-MIMO AUTOMOTIVE RADAR — SIMULATION AND PERCEPTION FRAMEWORK
+
+See README.md for the full technical description, results and usage.
+
+DESIGN RULES, enforced by validation/contract_selftest.m and integrity_selftest.m
+  1. One canonical implementation per algorithm. No module is shadowed by a
+     copy inside another file, because MATLAB resolves local functions ahead
+     of files on the path.
+  2. One normalisation convention for every transform, defined once in
+     core/processing/rd_window.m, so power maps from different modules sit on
+     one absolute scale.
+  3. Every published configuration field has a consumer, and every interface
+     control binds to a parameter the pipeline reads.
+  4. Detection thresholds are false-alarm probabilities or physical margins,
+     solved numerically against the stated null distribution.
+  5. Truth never forms a detection, group, track or object. It enters only in
+     offline scoring and stage attribution.
+
+LAYOUT
+  core/config        physical system definition and fail-fast validation
+  core/simulation    FMCW/TDM-MIMO waveform, propagation and receiver model
+  core/processing    normalisation authority, range-Doppler, keystone,
+                     coherent moving/stationary decomposition, clutter filter
+  core/detection     calibrated CFAR with point-spread rejection, adaptive
+                     matched filter, subspace detector, stationary detector
+  core/estimation    MUSIC/Capon/Bartlett, TDM aperture and alias resolution
+  core/interference  median-background and Hough time-frequency mitigation
+  core/tbd           likelihood-ratio and coherent weak-target integration
+  core/tracking      grouping, association, tracking, object existence
+  core/evaluation    exact assignment scoring, stage and mechanism attribution
+  experiments        Monte Carlo, benchmarks, parameter studies, closed-loop
+                     learning, campaign wrappers
+  validation         behavioural and structural self-tests
+  gui                interactive radar design and analysis application
+  docs/images        interface screenshots
+  docs/results       campaign output, figures and CSV
+
+ENTRY POINTS
+  run_radar_project                     offline pipeline with evaluation
+  run_radar_realtime                    causal frame-by-frame operation
+  fmcw_radar_gui / launch_radar_gui     interactive application
+  run_all_selftests                     validation suite
+  run_feedback_parameter_learning       closed-loop tuning
+  run_publication_campaign              one-command Monte Carlo campaign
+  run_radar_benchmarks                  SNR / RCS / architecture suites
+  run_parameter_studies                 sweep / grid / stagewise / sensitivity
+
+TUNING AND PERSISTENCE
+  run_feedback_parameter_learning writes core/config/learned_defaults.mat.
+  radar_configuration adopts its algorithm sections as a default layer, so a
+  tuned operating point survives a MATLAB restart and appears in the interface.
+  Precedence, lowest to highest: shipped defaults, learned values, explicit
+  caller fields. Delete the file to return to the shipped baseline.

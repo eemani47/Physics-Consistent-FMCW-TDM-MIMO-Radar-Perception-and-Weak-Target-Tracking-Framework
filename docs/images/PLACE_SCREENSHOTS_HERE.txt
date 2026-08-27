@@ -1,0 +1,4 @@
+Place interface screenshots here. Referenced by README.md as:
+  gui-workbench.png     design panel: scene table, radar parameters, derived checks
+  gui-results.png       results panel: range-angle, range-velocity, BEV, truth vs radar
+  gui-diagnostics.png   diagnostics: per-stage timing and detection attribution
