@@ -81,8 +81,7 @@ Full curves, both attribution tables, the held-out validation split and the clos
 The same pipeline runs under an interactive application. The radar design and the target scene are editable from the interface, every tunable stage parameter is exposed, and each run reports where the chain gained or lost each target.
 
 <!-- screenshot: full application window, design panel left, results and diagnostics right -->
-![The FMCW radar workbench](docs/images/gui-overview.png)
-
+[▶ The FMCW Radar Workbench — GUI Demo](docs/images/gui-overview.mp4)
 *Design panel on the left — scene table, radar parameters, derived physical checks, and the six tuning tabs. Output panel on the right — truth-versus-radar comparison, range-angle and range-velocity displays, the bird's-eye object map, per-stage timing and detection attribution.*
 
 Section [§2](#2-interactive-application--gui) covers the panels in detail.
