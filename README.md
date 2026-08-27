@@ -31,8 +31,7 @@ Loss attribution moves with the operating point: at −70 dB, **82 % of missed t
 
 Everything above was produced by the same pipeline that runs under an interactive application. **The radar is not fixed in a script.** Carrier, maximum range, range and velocity resolution, bandwidth, chirp slope and duration, ADC rate, samples per chirp, frame length, azimuth span, transmit and receive counts — all editable live, with unit selectors, individual lock controls, and a derived-quantity panel that recomputes maximum beat frequency, ADC Nyquist requirement, range capability and TDM ambiguity as you type, refusing a physically impossible design before a run rather than after it.
 
-![The FMCW radar workbench](docs/images/gui-overview.png)
-
+[▶ The FMCW Radar Workbench — GUI Demo](docs/images/gui-overview.mp4)
 *Design panel: scene table, waveform and array parameters, derived physical checks, six tuning tabs. Output panel: truth-versus-radar comparison, range-angle and range-velocity displays, bird's-eye object map, per-stage timing and detection attribution.*
 
 **Build the scene target by target.** Range, velocity, cross-section and azimuth are editable per object; targets can be added, removed, or drawn fresh at random with a separation guard. A quarter of a random scene is static, so the stationary branch is exercised alongside the moving one.
