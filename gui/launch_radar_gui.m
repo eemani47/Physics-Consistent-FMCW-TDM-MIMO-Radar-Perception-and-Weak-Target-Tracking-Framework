@@ -1,5 +1,5 @@
 function fig = launch_radar_gui
-%LAUNCH_RADAR_GUI Launch the FMCW Automotive Radar GUI.
+%LAUNCH_RADAR_GUI Launch the FMCW Automotive Radar GUI EMANI.
 fprintf('[FMCW Radar] Starting GUI...\n');
 root = fileparts(mfilename('fullpath'));
 if ~contains(path,root), addpath(root); end
