@@ -1,5 +1,5 @@
 function [y,info] = hough_interference_mitigator(x,p)
-%HOUGH_INTERFERENCE_MITIGATOR  Power-weighted Hough ridge suppression.
+%HOUGH_INTERFERENCE_MITIGATOR  Power-weighted Hough ridge suppression EMANI.
 %
 %   Second-stage mutual-interference removal, applied to the dechirped data of
 %   one receive chain. Where the median-background front end works cell by
