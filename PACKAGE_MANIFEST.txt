@@ -1,7 +1,7 @@
 FMCW / TDM-MIMO AUTOMOTIVE RADAR — SIMULATION AND PERCEPTION FRAMEWORK
 
 See README.md for the full technical description, results and usage.
-
+% EMANI
 DESIGN RULES, enforced by validation/contract_selftest.m and integrity_selftest.m
   1. One canonical implementation per algorithm. No module is shadowed by a
      copy inside another file, because MATLAB resolves local functions ahead
